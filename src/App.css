@@ -46,7 +46,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-row-gap: 3em;
+  grid-row-gap: 5em;
   justify-items: center;
   grid-auto-rows: minmax(150, auto);
 }
@@ -56,9 +56,23 @@
   grid-row: 1/2;
 }
 
+.specialBtn img {
+  width: 600px;
+  height: 500px;
+}
+
 .specialBtn {
-  padding: 20%;
-  grid-column: 3/4;
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+.inspoStyle {
+  font-family: sans-serif;
+  background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  align-self: end;
+  grid-column: 1/2;
   grid-row: 1/2;
 }
 
