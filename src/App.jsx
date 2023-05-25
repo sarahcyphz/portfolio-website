@@ -1,44 +1,43 @@
-import { useState } from 'react';
-import profile from './images/profile.png';
 import memeP from './images/memeP.jpeg';
-import github from './images/github.png';
-import linkedIn from './images/linkedIn.png';
 import Hobbies from './components/Hobbies.jsx';
 import Goals from './components/Goals.jsx';
-// import { buttons } from './buttons.js';
+import Buttons  from './Buttons.jsx';
+import Inspos from "./components/Inspo.tsx";
+import Kanyes from "./components/Kanye.tsx";
+import fish from './images/fish.jpeg';
+import kanyeHead from './images/kanyeHead.png';
+import Ages from './components/Age';
+import { useState } from 'react';
 import './App.css';
 
 // renders
 function App() {
+
+  const [fesh, setFesh] = useState(false);
+
+  function handleCLick() {
+    setFesh(!fesh);
+  }
+
+  const [seeText, setSeeText] = useState(false);
+
+  function handleSeeClick() {
+    setSeeText(!seeText);
+  }
+
   return (
     <>
     <h1>Sarah Cyphers</h1>
     <h4>Sarah.Cyphers@neudesic.com</h4>
     <div className="grid-container">
-      <div className="grid-child linkBtn">
-        <h4>Links:</h4>
-        <a href="https://www.linkedin.com/in/sarah-cyphers" target="_blank">
-          <img src={linkedIn} width = {50} height = {50} className="logo" alt="Linkedin logo" />
-        </a>
-        <a href="https://github.com/sarahcyphz" target="_blank">
-          <img src={github} width = {45} height = {45} className="logo" alt="Linkedin logo" />
-        </a>
-        <div>
-        </div>
-      </div>
-      <div className="grid-child profilePic">
-        <img src={profile} alt="Profile Pic"/>
-      </div>
-      <div className="grid-child specialBtn">
-        <button className="specialBtn" >Click Me</button>
-      </div>
+        <Buttons />
+        <Inspos />
       <div className="grid-child aboutMe">
         <h2 className="h2">About Me</h2>
         <p> 
           I grew up in northern Virginia and moved to Ohio for college.
           I am currently enrolled at The Ohio State University pursuing a degree
-          in information systems with a minor in textiles and CIS. Previously, I 
-          was employed at Starbucks where I worked over the course of 2 years.
+          in information systems with a minor in textiles and CIS. .
         </p>
       </div>
         <Goals/>
@@ -46,7 +45,16 @@ function App() {
       <div className="grid-child meme">
         <img src={memeP} alt="meme" />
       </div>
+      <div className="grid-child specialBtn">
+        <button className="specialBtn" onClick={handleCLick}>{(fesh) ? <img src={fish} width = {500} height = {400} /> : "click me" }</button>
       </div>
+      <div className="grid child kanyeBtn">
+        <button className="kanyeBtn" onClick={handleSeeClick}><img src={kanyeHead} width={70} height={100} alt="kanye"/></button>
+        {seeText && <Kanyes />}
+      </div>
+      <Ages />
+      </div>
+
     </>
   );
 }
