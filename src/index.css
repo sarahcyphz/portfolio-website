@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif,  Snell-Roundhand;
   line-height: 1.5;
   font-weight: 400;
   color: #dee4e8;
@@ -39,6 +39,6 @@ button:hover {
     color: #747bff;
   }
   button {
-    background-color: #ffa5dbe8;
+    background-color: #d2ffa5e8;
   }
 }
